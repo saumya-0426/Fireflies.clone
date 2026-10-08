@@ -1,0 +1,3 @@
+export default function SettingsPage() {
+  return <div className="page-wrap settings-page"><div className="eyebrow muted-eyebrow">WORKSPACE PREFERENCES</div><h1>Settings</h1><p className="settings-intro">Workspace and profile settings are placeholders for this assignment.</p><section className="settings-card"><span className="settings-symbol" aria-hidden="true">⚙</span><div><h2>Settings are coming later</h2><p>The assignment assumes a default logged-in user, so authentication and account management are not part of the core scope.</p></div><span className="coming-soon">COMING SOON</span></section></div>;
+}

@@ -1,0 +1,17 @@
+# JavaScript dependencies and build output
+node_modules/
+frontend/.next/
+frontend/out/
+
+# Python virtual environments, caches, and local environment files
+backend/.venv/
+backend/data/*.db
+__pycache__/
+*.py[cod]
+.env
+backend/.env
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
