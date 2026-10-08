@@ -37,7 +37,7 @@ uvicorn app.main:app --reload
 
 The backend runs at http://localhost:8000. Its interactive API documentation is at http://localhost:8000/docs.
 ```
-###2. Start the frontend
+##2. Start the frontend
 Open a second terminal:
 ```
 cd frontend
@@ -54,7 +54,8 @@ If frontend/.env.local already exists, keep it and skip the Copy-Item command.
 - Check the summary, topics, and action items.
 - Refresh the page and confirm saved data remains available.
 ```
-###Results
+##Results
+
 The app provides:
 - A meeting list with search, date filters, participant filters, and sorting.
 - Meeting creation, editing, and deletion.
@@ -64,7 +65,8 @@ The app provides:
 - Groq-generated summaries when a backend API key is configured; otherwise, a local mock summary is used.
 - SQLite storage and seeded sample meetings.
 
-###Conclusion
+##Conclusion
+
 This project demonstrates a meeting transcript and notes workflow using Next.js, FastAPI, and SQLite. It supports optional AI summaries through Groq. Real-time meeting bots, speech-to-text, integrations, authentication, and real audio playback are outside its current scope.
 
 
