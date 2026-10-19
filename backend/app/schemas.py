@@ -90,6 +90,10 @@ class ActionItemRead(ActionItemInput):
     updated_at: datetime
 
 
+class ActionItemWithMeetingRead(ActionItemRead):
+    meeting_title: str
+
+
 class MeetingCreate(BaseModel):
     title: MeetingTitle
     started_at: datetime

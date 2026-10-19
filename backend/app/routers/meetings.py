@@ -13,6 +13,7 @@ from app.schemas import (
     ActionItemCreate,
     ActionItemRead,
     ActionItemUpdate,
+    ActionItemWithMeetingRead,
     MeetingCreate,
     MeetingDetail,
     MeetingRead,
@@ -153,6 +154,20 @@ def get_transcript(meeting_id: int, db: Session = Depends(get_db)) -> list[Trans
 def get_summary(meeting_id: int, db: Session = Depends(get_db)) -> MeetingSummary | None:
     meeting = _get_meeting(db, meeting_id)
     return meeting.summary
+
+
+@router.get("/action-items", response_model=list[ActionItemWithMeetingRead])
+def list_action_items(db: Session = Depends(get_db)) -> list[dict]:
+    """Return action items with their meeting title for the workspace task list."""
+    rows = db.execute(
+        select(ActionItem, Meeting.title)
+        .join(Meeting, ActionItem.meeting_id == Meeting.id)
+        .order_by(ActionItem.is_completed.asc(), ActionItem.due_date.asc(), ActionItem.id.asc())
+    ).all()
+    return [
+        {**ActionItemRead.model_validate(item).model_dump(), "meeting_title": title}
+        for item, title in rows
+    ]
 
 
 @router.post("/meetings/{meeting_id}/action-items", response_model=ActionItemRead, status_code=status.HTTP_201_CREATED)

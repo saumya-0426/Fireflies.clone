@@ -13,7 +13,7 @@ function formatTime(seconds: number): string {
 }
 
 function formatMeetingDate(value: string): string {
-  return new Intl.DateTimeFormat("en", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
+  return new Intl.DateTimeFormat("en", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }).format(new Date(value));
 }
 
 function localDateTime(value?: string | null): string {
