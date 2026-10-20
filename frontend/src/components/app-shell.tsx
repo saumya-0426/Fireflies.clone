@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navigation = [
   {
@@ -64,12 +65,24 @@ function FirefliesMark() {
 
 export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
   const pathname = usePathname();
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const currentPage = pathname.startsWith("/meetings/")
     ? "Meeting details"
     : navigation.find((item) => item.href === pathname)?.label ?? "Meetings";
 
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("fireflies-theme");
+    if (savedTheme === "light" || savedTheme === "dark") setTheme(savedTheme);
+  }, []);
+
+  function toggleTheme() {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    window.localStorage.setItem("fireflies-theme", nextTheme);
+  }
+
   return (
-    <div className="workspace-shell">
+    <div className="workspace-shell" data-theme={theme}>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <aside className="sidebar" aria-label="Workspace sidebar">
         <Link className="brand" href="/meetings" aria-label="Fireflies Clone home">
@@ -123,6 +136,10 @@ export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
             <p className="topbar-title">{currentPage}</p>
           </div>
           <div className="topbar-actions">
+            <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`} title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}>
+              <span aria-hidden="true">{theme === "dark" ? "☀" : "☾"}</span>
+              <span className="theme-toggle-label">{theme === "dark" ? "Light mode" : "Dark mode"}</span>
+            </button>
             <span className="topbar-workspace-tag">Personal workspace</span>
             <span className="top-avatar" aria-label="Saumya">S</span>
           </div>
