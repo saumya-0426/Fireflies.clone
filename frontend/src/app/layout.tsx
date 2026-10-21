@@ -4,8 +4,8 @@ import { AppShell } from "@/components/app-shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Meetings | Fireflies Clone",
-  description: "A focused workspace for meeting transcripts, summaries, and action items.",
+  title: "MeetMind | AI Meeting Intelligence Workspace",
+  description: "An AI meeting intelligence workspace for meetings, transcripts, summaries, and action items.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

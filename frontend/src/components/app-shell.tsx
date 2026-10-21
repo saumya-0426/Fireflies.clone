@@ -85,9 +85,9 @@ export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
     <div className="workspace-shell" data-theme={theme}>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <aside className="sidebar" aria-label="Workspace sidebar">
-        <Link className="brand" href="/meetings" aria-label="Fireflies Clone home">
+        <Link className="brand" href="/meetings" aria-label="MeetMind home">
           <span className="brand-mark"><FirefliesMark /></span>
-          <span>fireflies<span className="brand-light">.ai</span></span>
+          <span>MeetMind<span className="brand-light"> AI</span></span>
         </Link>
 
         <div className="workspace-switcher" role="group" aria-label="Current workspace: My workspace">

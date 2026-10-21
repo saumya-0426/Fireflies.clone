@@ -1,4 +1,4 @@
-"""API entry point for the Fireflies clone."""
+"""API entry point for the MeetMind workspace."""
 
 import os
 
@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers.meetings import router as meetings_router
 
 app = FastAPI(
-    title="Fireflies Clone API",
+    title="MeetMind API",
     version="0.1.0",
     description="Backend API for the meeting notes and transcript workspace.",
 )

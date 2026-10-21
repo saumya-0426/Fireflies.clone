@@ -24,7 +24,7 @@ export default function SettingsPage() {
       <div className="settings-grid">
         <section className="settings-card settings-info-card">
           <span className="settings-symbol settings-purple" aria-hidden="true">✳</span>
-          <div><span className="settings-card-label">APPEARANCE</span><h3>Dark workspace</h3><p>The meeting workspace uses a dark interface inspired by the Fireflies product.</p></div>
+          <div><span className="settings-card-label">APPEARANCE</span><h3>Dark workspace</h3><p>The meeting workspace uses the MeetMind interface, with a dark theme and a light theme option.</p></div>
           <span className="settings-value">Current</span>
         </section>
 
