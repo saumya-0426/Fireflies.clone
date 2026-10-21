@@ -1,6 +1,6 @@
-# Fireflies Clone
+# MeetMind — AI Meeting Intelligence Workspace
 
-A meeting notes and transcript workspace built for the Scaler full-stack assignment. The interface is inspired by [Fireflies.ai](https://fireflies.ai/).
+A meeting notes and transcript workspace built for Understanding . The interface is inspired by [Fireflies.ai](https://fireflies.ai/).
 
 ## Introduction
 
